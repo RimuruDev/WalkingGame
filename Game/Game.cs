@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
 using WalkerGame.Models;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 
 namespace WalkerGame;
 
