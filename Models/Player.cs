@@ -1,13 +1,24 @@
 namespace WalkerGame.Models;
 
-public class Player
+public sealed class Player
 {
-    public Player(string name)
-    {
+    public string Name { get; }
+    public int CurrentPosition { get; private set; }
+
+    public Player(string name) =>
         Name = name;
-        CurrentPosition = 0;
+
+    public void Move(int steps, int mapSize)
+    {
+        CurrentPosition += steps;
+
+        if (CurrentPosition < 0)
+            CurrentPosition = 0;
+
+        if (CurrentPosition > mapSize)
+            CurrentPosition = mapSize;
     }
 
-    public string Name { get; init; }
-    public int CurrentPosition { get; set; }
+    public bool HasWon(int mapSize) =>
+        CurrentPosition >= mapSize;
 }
