@@ -2,10 +2,10 @@ namespace WalkerGame.Models;
 
 public sealed class Player
 {
-    public string Name { get; }
+    public string? Name { get; }
     public int CurrentPosition { get; private set; }
 
-    public Player(string name) =>
+    public Player(string? name) =>
         Name = name;
 
     public void Move(int steps, int mapSize)
